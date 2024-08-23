@@ -1,14 +1,14 @@
-# Pytree2Safetensor
-Pytree2Safetensor is a simple package to save and load JAX PyTrees to and from
+# Pytree2Safetensors
+Pytree2Safetensors is a simple package to save and load JAX PyTrees to and from
 Safetensors, a popular file format for saving neural network weights.
 
 To install, run
 
 ```
-pip install --upgrade pytree2safetensor
+pip install --upgrade pytree2safetensors
 ```
 
-Pytree2Safetensor's depends on `jax`, `safetensors`, and `jaxtyping`. You also need
+Pytree2Safetensors depends on `jax`, `safetensors`, and `jaxtyping`. You also need
 to have at least Python 3.10
 
 ## Specification
@@ -41,7 +41,7 @@ A class which implements the bare minimum to be a node in a pytree according to 
 
 ### Saving
 #### `save_pytree(tree: PyTree, path: str) -> None`
-Saves the pytree as a safetensor at the given path. Equivalent to
+Saves the pytree as a safetensors at the given path. Equivalent to
 ```python
 safetensors.flax.save_file(pytree2dict(tree), path)
 ```
@@ -51,10 +51,10 @@ safetensors.flax.save_file(pytree2dict(tree), path)
 Alias of `safetensors.flax.load_file`
 
 #### ```load_pytree(path: str) -> PyTree```
-Loads a file and uses `dict2pytree` to convert the safetensor dict to a pytree.
+Loads a file and uses `dict2pytree` to convert the safetensors dict to a pytree.
 
 #### ```set_weights(module: PyTree, dictionary: dict) -> PyTree```
-Given a pytree module and a safetensor dict, load the weights in the safetensor dict into the module using string2keypath to determine their paths. Returns a new pytree.
+Given a pytree module and a safetensors dict, load the weights in the safetensors dict into the module using string2keypath to determine their paths. Returns a new pytree.
 
 #### ```load_into_pytree(module: PyTree, path: str) -> PyTree```
 Equivalent to `set_weights(module, load_file(path))`.
