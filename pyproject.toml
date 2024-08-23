@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pytree2safetensor"
-version = "0.1.1"
+version = "0.1.3"
 authors = [
   { name="Joseph Camacho", email="camacho.joseph@gmail.com" },
 ]
