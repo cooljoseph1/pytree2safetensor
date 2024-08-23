@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pytree2safetensor"
-version = "0.1"
+version = "0.1.1"
 authors = [
   { name="Joseph Camacho", email="camacho.joseph@gmail.com" },
 ]
-description = "A simple package to save and load Jax PyTrees to and from Safetensors"
+description = "A simple package to save and load JAX PyTrees to and from Safetensors"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
