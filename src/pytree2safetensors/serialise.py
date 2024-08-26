@@ -43,7 +43,11 @@ def pytree2dict(tree: PyTree) -> dict:
 def string2keypath(string: str) -> KeyPath:
     path = []
     word_builder = []
-    sep = string[0] if string[0] in {".", "@", "#"} else "."
+    if string[0] in {".",  "@", "#"}:
+        sep = string[0]
+        string = string[1:]
+    else:
+        sep = "."
 
     def append_word():
         nonlocal word_builder
